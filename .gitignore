@@ -5,3 +5,6 @@ node_modules/
 ~$*
 DSA Index.docx
 *.docx
+
+.vercel
+.env*

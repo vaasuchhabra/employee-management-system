@@ -2,7 +2,8 @@
 
 A complete Employee Management System whose every feature is powered by a **hand-written data structure or algorithm** — no frameworks, no libraries, no build step. All data structures live in [`js/dsa/`](js/dsa) and are covered by automated tests.
 
-**Live demo:** _https://employee-management-system.vercel.app_ (see the Vercel deployment link in the repo's About section)
+**Live demo:** https://nexahr-employee-management.vercel.app  
+**Source:** https://github.com/vaasuchhabra/employee-management-system
 
 ![Dashboard](docs/screenshots/01-dashboard.png)
 
@@ -44,6 +45,23 @@ A complete Employee Management System whose every feature is powered by a **hand
 | ![Org chart](docs/screenshots/07-org-chart.png) | ![Leave queue](docs/screenshots/08b-leave-processed.png) |
 | ![Payroll](docs/screenshots/09-payroll.png) | ![DSA Lab](docs/screenshots/10d-dsa-benchmark.png) |
 
+## Python version (console)
+
+The same data structures are also implemented in **Python** in [`python/`](python), with a menu-driven console Employee Management System:
+
+```bash
+cd python
+python ems.py            # interactive menu (data saved to employees.json)
+python ems.py --demo     # runs every feature once and prints the results
+python -m unittest test_ems.py -v   # 12 tests
+```
+
+| File | Contents |
+|---|---|
+| [`python/dsa.py`](python/dsa.py) | HashTable, AVLTree, Trie, Heap, Queue, Stack, OrgGraph, merge / quick / heap / insertion sort, binary search |
+| [`python/ems.py`](python/ems.py) | `EmployeeStore` (CRUD, validation, undo/redo, leave queue) and the console menu |
+| [`python/test_ems.py`](python/test_ems.py) | Unit tests for every structure and the store |
+
 ## Project structure
 
 ```
@@ -56,7 +74,8 @@ A complete Employee Management System whose every feature is powered by a **hand
 │   ├── ui.js               DOM helpers, modal, toast, bar charts
 │   ├── dsa/                ← the data structures (no dependencies)
 │   └── views/              One file per page
-└── tests/dsa.test.js       29 automated tests (node:test)
+├── tests/dsa.test.js       29 automated tests (node:test)
+└── python/                 Console version of the same system in Python
 ```
 
 ## Run locally
