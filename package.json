@@ -1,0 +1,13 @@
+{
+  "name": "nexahr-employee-management-system",
+  "version": "1.0.0",
+  "description": "Employee Management System built on hand-written data structures (Hash Table, AVL Tree, Trie, Heap, Queue, Stack, Graph) and sorting algorithms.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve -l 5173 .",
+    "test": "node --test tests/"
+  },
+  "keywords": ["employee-management", "dsa", "data-structures", "avl-tree", "trie", "hash-table", "heap", "graph"],
+  "license": "MIT"
+}

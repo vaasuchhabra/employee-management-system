@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexaHR — Employee Management System</title>
+    <meta name="description" content="Employee Management System built on hand-written data structures: Hash Table, AVL Tree, Trie, Heap, Queue, Stack and Graph." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <span class="brand-mark">N</span>
+          <div>
+            <div class="brand-name">NexaHR</div>
+            <div class="brand-sub">Employee Management</div>
+          </div>
+        </div>
+        <nav class="nav" id="nav">
+          <a href="#/dashboard" data-route="dashboard"><span class="ico">▦</span>Dashboard</a>
+          <a href="#/employees" data-route="employees"><span class="ico">☰</span>Employees</a>
+          <a href="#/org" data-route="org"><span class="ico">⌬</span>Org Chart</a>
+          <a href="#/leaves" data-route="leaves"><span class="ico">⇆</span>Leave Queue <span class="nav-count" id="leave-count"></span></a>
+          <a href="#/payroll" data-route="payroll"><span class="ico">₹</span>Payroll &amp; Analytics</a>
+          <a href="#/dsa" data-route="dsa"><span class="ico">{ }</span>DSA Lab</a>
+        </nav>
+        <div class="sidebar-foot">
+          <button class="btn ghost small block" id="reset-demo">↺ Reset demo data</button>
+          <p class="sidebar-note">Data is stored in your browser (localStorage).</p>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
+          <div class="page-title">
+            <h1 id="page-title">Dashboard</h1>
+            <p id="page-sub"></p>
+          </div>
+          <div class="global-search">
+            <input id="global-search" type="search" placeholder="Search name or ID…  (Trie)" autocomplete="off" aria-label="Search employees" />
+            <div class="suggest" id="global-suggest"></div>
+          </div>
+          <div class="top-actions">
+            <button class="icon-btn" id="undo-btn" title="Undo (Ctrl+Z) — Stack" aria-label="Undo">↶</button>
+            <button class="icon-btn" id="redo-btn" title="Redo (Ctrl+Y) — Stack" aria-label="Redo">↷</button>
+            <button class="btn primary" id="add-btn">＋ Add Employee</button>
+          </div>
+        </header>
+
+        <main id="view" class="view"></main>
+      </div>
+    </div>
+
+    <button class="trace-toggle" id="trace-toggle" aria-expanded="false">⚡ DSA Trace</button>
+    <section class="trace-panel" id="trace-panel" aria-label="Data structure operation trace">
+      <div class="trace-head">
+        <strong>DSA Trace</strong><span>which data structure handled each operation</span>
+        <button class="icon-btn small" id="trace-close" aria-label="Close trace">✕</button>
+      </div>
+      <div class="trace-body" id="trace-body"></div>
+    </section>
+
+    <div id="modal-root"></div>
+    <div id="toasts" class="toasts"></div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
