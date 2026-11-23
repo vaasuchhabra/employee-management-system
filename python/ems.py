@@ -310,7 +310,7 @@ MENU = """
   4. Search by name   (Trie)       12. Request leave           (Queue)
   5. Update employee               13. Process next leave      (Queue)
   6. Delete employee               14. Undo                    (Stack)
-  7. Sort employees   (Merge/Quick/Heap)  15. Redo             (Stack)
+  7. Sort employees   (Sorting)    15. Redo                    (Stack)
   8. Salary range     (AVL Tree)   16. Top-K earners           (Heap)
   0. Save and exit
  ================================================================================"""
@@ -379,7 +379,7 @@ def run_menu(store):
                 print_table(store.top_earners(int(ask("k", 5))))
             elif choice == "0":
                 store.save()
-                print("  Saved to", store.path)
+                print("  Saved", len(store), "employees to", os.path.basename(store.path or "memory"), "- goodbye!")
                 return
         except ValidationError as err:
             print("  Error:", err)
